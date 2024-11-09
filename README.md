@@ -16,7 +16,20 @@
     h1 {
       text-align: center;
       margin-top: 20px;
-      font-size: 2rem;
+      font-size: 2rem; /* 標題字型大小 */
+    }
+
+    /* 超連結樣式，讓文字大小與 h1 一樣 */
+    a {
+      font-size: 2rem; /* 與 h1 標題相同的字型大小 */
+      text-decoration: none; /* 移除超連結的下劃線 */
+      color: #007BFF; /* 設定超連結的顏色 */
+      display: inline-block; /* 使文字可以像塊元素一樣處理 */
+      margin: 10px 0; /* 增加間距 */
+    }
+
+    a:hover {
+      color: #0056b3; /* 滑鼠懸停時改變顏色 */
     }
 
     /* 使用 Flexbox 使表格響應式 */
@@ -53,6 +66,10 @@
 
       h1 {
         font-size: 1.5rem;
+      }
+
+      a {
+        font-size: 1.5rem; /* 小螢幕下的超連結文字大小 */
       }
     }
 
