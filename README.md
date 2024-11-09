@@ -55,6 +55,7 @@
       max-width: 100%;
       height: auto;
       aspect-ratio: 16 / 9; /* 保持16:9比例 */
+      object-fit: cover; /* 確保影片自適應容器，保持寬高比 */
     }
 
     /* 當螢幕小於600px時，將內容調整為垂直排列 */
@@ -89,9 +90,11 @@
     <a href="Tetris-game-v1/index.html">俄羅斯方塊</a>
     <video controls>
       <source src="videos/UUFC2409.MP4" type="video/mp4">
+      您的瀏覽器不支持 video 標籤。
     </video>
     <video controls>
       <source src="videos/KHCN1273.MP4" type="video/mp4">
+      您的瀏覽器不支持 video 標籤。
     </video>
   </div>
 </body>
