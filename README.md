@@ -52,9 +52,17 @@
       color: #007BFF;
     }
 
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* 使視頻等比縮放 */
     video {
-      max-width: 100%;
-      height: auto;
+      max-width: 100%; /* 寬度最多為容器的100% */
+      height: auto; /* 高度自動調整，保持比例 */
       border-radius: 10px;
     }
 
@@ -73,6 +81,7 @@
 
 <body>
   <h1>小遊戲</h1>
+
   <div class="container">
     <div class="game-link">
       <h2><a href="klotski-game/version5x5/index.html">華容道</a></h2>
