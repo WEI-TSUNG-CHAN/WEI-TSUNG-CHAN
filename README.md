@@ -51,18 +51,26 @@
       color: white;
     }
 
+    /* 影片容器：保持比例，讓影片自動縮放 */
     .video-container {
       margin: 20px 0;
       width: 100%;
       max-width: 800px;
-      padding: 0 10px;
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 的比例，保持影片的高寬比 */
+      background-color: #000;
+      overflow: hidden;
+      border-radius: 10px;
     }
 
+    /* 影片設定：讓影片填滿容器 */
     video {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
+      height: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     /* 響應式設計：針對小屏幕設備 */
@@ -78,6 +86,7 @@
 
       .video-container {
         max-width: 100%;
+        padding-bottom: 56.25%; /* 保持 16:9 的比例 */
       }
     }
 
@@ -94,19 +103,15 @@
 
       .video-container {
         max-width: 100%;
-        padding: 0;
+        padding-bottom: 56.25%; /* 保持 16:9 的比例 */
       }
 
       video {
         width: 100%;
-        height: auto;
+        height: 100%;
       }
     }
 
-    /* 防止影片超出邊界 */
-    .video-container {
-      overflow: hidden;
-    }
   </style>
 </head>
 
