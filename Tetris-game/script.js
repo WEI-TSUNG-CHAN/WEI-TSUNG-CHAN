@@ -1,5 +1,3 @@
-// script.js
-
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -268,5 +266,65 @@ function resizeCanvas() {
   drawTetromino();
 }
 
+// 設置虛擬按鈕控制事件 - 長按連擊效果
+let leftInterval, rightInterval, downInterval, rotateInterval;
+
+document.getElementById('leftButton').addEventListener('mousedown', () => {
+  leftInterval = setInterval(() => {
+    moveTetromino(-1, 0);  // 左移
+  }, 50);  // 每 100 毫秒執行一次
+});
+
+document.getElementById('leftButton').addEventListener('mouseup', () => {
+  clearInterval(leftInterval);  // 停止左移
+});
+
+document.getElementById('leftButton').addEventListener('mouseleave', () => {
+  clearInterval(leftInterval);  // 當鼠標離開按鈕時，停止左移
+});
+
+document.getElementById('rightButton').addEventListener('mousedown', () => {
+  rightInterval = setInterval(() => {
+    moveTetromino(1, 0);  // 右移
+  }, 50);  // 每 100 毫秒執行一次
+});
+
+document.getElementById('rightButton').addEventListener('mouseup', () => {
+  clearInterval(rightInterval);  // 停止右移
+});
+
+document.getElementById('rightButton').addEventListener('mouseleave', () => {
+  clearInterval(rightInterval);  // 當鼠標離開按鈕時，停止右移
+});
+
+document.getElementById('downButton').addEventListener('mousedown', () => {
+  downInterval = setInterval(() => {
+    moveTetromino(0, 1);  // 下移
+  }, 50);  // 每 100 毫秒執行一次
+});
+
+document.getElementById('downButton').addEventListener('mouseup', () => {
+  clearInterval(downInterval);  // 停止下移
+});
+
+document.getElementById('downButton').addEventListener('mouseleave', () => {
+  clearInterval(downInterval);  // 當鼠標離開按鈕時，停止下移
+});
+
+document.getElementById('rotateButton').addEventListener('mousedown', () => {
+  rotateInterval = setInterval(() => {
+    rotateTetromino();  // 旋轉方塊
+  }, 50);  // 每 100 毫秒執行一次
+});
+
+document.getElementById('rotateButton').addEventListener('mouseup', () => {
+  clearInterval(rotateInterval);  // 停止旋轉
+});
+
+document.getElementById('rotateButton').addEventListener('mouseleave', () => {
+  clearInterval(rotateInterval);  // 當鼠標離開按鈕時，停止旋轉
+});
+
+// 畫布初始化
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas); // 當視窗大小改變時重新計算畫布大小
