@@ -11,19 +11,23 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      overflow-x: hidden;  /* 防止橫向滾動條 */
     }
 
     h1 {
       text-align: center;
-      font-size: 2em;
-      margin-top: 20px;
+      font-size: 6vw; /* 根據螢幕寬度自動縮放 */
+      margin: 10px 0;
+      color: #333;
     }
 
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .game-link {
@@ -33,16 +37,16 @@
     }
 
     .game-link a {
-      font-size: 1.5em;
+      font-size: 4vw; /* 根據螢幕寬度縮放字體 */
       text-decoration: none;
       color: #007bff;
-      padding: 12px;
+      padding: 5vw; /* 根據螢幕縮放間距 */
       border-radius: 5px;
       background-color: #e0e0e0;
       transition: background-color 0.3s;
       display: inline-block;
-      width: 100%;
-      max-width: 300px; /* 限制最大寬度，避免過大 */
+      width: 80%; /* 避免連結太大，給與適當的寬度 */
+      max-width: 350px;
       text-align: center;
     }
 
@@ -55,7 +59,7 @@
     .video-container {
       margin: 20px 0;
       width: 100%;
-      max-width: 800px;
+      max-width: 100%;
       position: relative;
       padding-bottom: 56.25%; /* 16:9 的比例，保持影片的高寬比 */
       background-color: #000;
@@ -76,16 +80,15 @@
     /* 響應式設計：針對小屏幕設備 */
     @media (max-width: 768px) {
       h1 {
-        font-size: 1.6em;
+        font-size: 8vw;
       }
 
       .game-link a {
-        font-size: 1.2em;
-        padding: 10px;
+        font-size: 5vw;
+        padding: 4vw;
       }
 
       .video-container {
-        max-width: 100%;
         padding-bottom: 56.25%; /* 保持 16:9 的比例 */
       }
     }
@@ -93,16 +96,15 @@
     /* 響應式設計：針對非常小的屏幕設備（如手機） */
     @media (max-width: 480px) {
       h1 {
-        font-size: 1.4em;
+        font-size: 10vw;
       }
 
       .game-link a {
-        font-size: 1.1em;
-        padding: 8px;
+        font-size: 6vw;
+        padding: 3vw;
       }
 
       .video-container {
-        max-width: 100%;
         padding-bottom: 56.25%; /* 保持 16:9 的比例 */
       }
 
