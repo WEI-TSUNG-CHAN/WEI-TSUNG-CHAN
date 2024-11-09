@@ -15,16 +15,16 @@
     }
 
     h1 {
-      text-align: center;
       font-size: 6vw; /* 根據螢幕寬度自動縮放 */
-      margin: 10px 0;
+      margin: 10px;
+      padding-left: 10px;  /* 靠左對齊 */
       color: #333;
     }
 
     .container {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;  /* 這裡改為 flex-start，使所有項目靠左對齊 */
       padding: 10px;
       width: 100%;
       box-sizing: border-box;
@@ -33,7 +33,7 @@
     .game-link {
       margin: 10px 0;
       width: 100%;
-      text-align: center;
+      text-align: left;  /* 連結靠左對齊 */
     }
 
     .game-link a {
@@ -47,7 +47,7 @@
       display: inline-block;
       width: 80%; /* 避免連結太大，給與適當的寬度 */
       max-width: 350px;
-      text-align: center;
+      text-align: left;  /* 連結內文字靠左對齊 */
     }
 
     .game-link a:hover {
