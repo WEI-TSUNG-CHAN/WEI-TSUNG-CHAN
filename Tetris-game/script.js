@@ -269,60 +269,52 @@ function resizeCanvas() {
 // 設置虛擬按鈕控制事件 - 長按連擊效果
 let leftInterval, rightInterval, downInterval, rotateInterval;
 
-document.getElementById('leftButton').addEventListener('mousedown', () => {
+// 添加觸控事件支持
+function addTouchEventListener(element, startCallback, endCallback) {
+  element.addEventListener('mousedown', startCallback);
+  element.addEventListener('mouseup', endCallback);
+  element.addEventListener('mouseleave', endCallback);
+  
+  // 支援觸控事件
+  element.addEventListener('touchstart', startCallback);
+  element.addEventListener('touchend', endCallback);
+  element.addEventListener('touchcancel', endCallback);
+}
+
+// 處理左移
+addTouchEventListener(document.getElementById('leftButton'), () => {
   leftInterval = setInterval(() => {
     moveTetromino(-1, 0);  // 左移
-  }, 50);  // 每 100 毫秒執行一次
-});
-
-document.getElementById('leftButton').addEventListener('mouseup', () => {
+  }, 50);  // 每 50 毫秒執行一次
+}, () => {
   clearInterval(leftInterval);  // 停止左移
 });
 
-document.getElementById('leftButton').addEventListener('mouseleave', () => {
-  clearInterval(leftInterval);  // 當鼠標離開按鈕時，停止左移
-});
-
-document.getElementById('rightButton').addEventListener('mousedown', () => {
+// 處理右移
+addTouchEventListener(document.getElementById('rightButton'), () => {
   rightInterval = setInterval(() => {
     moveTetromino(1, 0);  // 右移
-  }, 50);  // 每 100 毫秒執行一次
-});
-
-document.getElementById('rightButton').addEventListener('mouseup', () => {
+  }, 50);  // 每 50 毫秒執行一次
+}, () => {
   clearInterval(rightInterval);  // 停止右移
 });
 
-document.getElementById('rightButton').addEventListener('mouseleave', () => {
-  clearInterval(rightInterval);  // 當鼠標離開按鈕時，停止右移
-});
-
-document.getElementById('downButton').addEventListener('mousedown', () => {
+// 處理下移
+addTouchEventListener(document.getElementById('downButton'), () => {
   downInterval = setInterval(() => {
     moveTetromino(0, 1);  // 下移
-  }, 50);  // 每 100 毫秒執行一次
-});
-
-document.getElementById('downButton').addEventListener('mouseup', () => {
+  }, 50);  // 每 50 毫秒執行一次
+}, () => {
   clearInterval(downInterval);  // 停止下移
 });
 
-document.getElementById('downButton').addEventListener('mouseleave', () => {
-  clearInterval(downInterval);  // 當鼠標離開按鈕時，停止下移
-});
-
-document.getElementById('rotateButton').addEventListener('mousedown', () => {
+// 處理旋轉
+addTouchEventListener(document.getElementById('rotateButton'), () => {
   rotateInterval = setInterval(() => {
     rotateTetromino();  // 旋轉方塊
-  }, 50);  // 每 100 毫秒執行一次
-});
-
-document.getElementById('rotateButton').addEventListener('mouseup', () => {
+  }, 50);  // 每 50 毫秒執行一次
+}, () => {
   clearInterval(rotateInterval);  // 停止旋轉
-});
-
-document.getElementById('rotateButton').addEventListener('mouseleave', () => {
-  clearInterval(rotateInterval);  // 當鼠標離開按鈕時，停止旋轉
 });
 
 // 畫布初始化

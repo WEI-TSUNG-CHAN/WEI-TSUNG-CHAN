@@ -6,18 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>俄羅斯方塊遊戲</title>
   <link rel="stylesheet" href="styles.css">
-  
+
 </head>
 
 <body>
   <h1>俄羅斯方塊遊戲<br>
+    <!-- 例如，將箭頭按鈕加入到#controls1容器中 -->
     <div id="controls1">
-      <button id="leftButton">←</button>
-    <button id="rightButton">→</button>
-    <button id="downButton">↓</button>
-    <button id="rotateButton">↑</button>
+      <button id="rotateButton"><i class="fa fa-rotate-left"></i> 旋轉</button> <!-- 上箭頭 -->
+      <button id="leftButton"><i class="fa fa-arrow-left"></i> 左</button> <!-- 左箭頭 -->
+      <button id="rightButton"><i class="fa fa-arrow-right"></i> 右</button> <!-- 右箭頭 -->
+      <button id="downButton"><i class="fa fa-arrow-down"></i> 下</button> <!-- 下箭頭 -->
     </div>
-    
+
   </h1>
   <div id="game-container">
     <canvas id="gameCanvas"></canvas>

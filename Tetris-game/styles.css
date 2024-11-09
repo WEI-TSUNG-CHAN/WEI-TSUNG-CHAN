@@ -48,14 +48,23 @@ button {
   color: white;
   border: none;
   padding: 10px;
-  font-size: 16px;
+  font-size: 16px; /* 確保文字大小一致 */
   cursor: pointer;
   margin: 5px;
   width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* 保證文字和圖示居中對齊 */
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 button:disabled {
   background-color: #555;
+}
+
+button i {
+  margin-left: 5px; /* 給箭頭留點間距 */
 }
 
 #controls {
@@ -86,7 +95,7 @@ button:disabled {
   color: white;
   border: none;
   padding: 20px;
-  font-size: 18px;
+  font-size: 16px; /* 設定與其他文字按鈕一致的字型大小 */
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -176,4 +185,3 @@ button:disabled {
     flex-direction: column;  /* 按鈕換行垂直排列 */
   }
 }
-
