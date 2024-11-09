@@ -163,6 +163,16 @@ button i {
   #controls {
     flex-direction: column;  /* 在平板上，按鈕垂直排列 */
   }
+
+  #controls1 {
+    width: 150px;
+    height: 150px;
+  }
+
+  #controls1 button {
+    padding: 10px;  /* 縮小按鈕的padding */
+    font-size: 12px; /* 縮小字型 */
+  }
 }
 
 @media (max-width: 480px) {
@@ -183,5 +193,15 @@ button i {
 
   #controls {
     flex-direction: column;  /* 按鈕換行垂直排列 */
+  }
+
+  #controls1 {
+    width: 120px;
+    height: 120px;
+  }
+
+  #controls1 button {
+    padding: 8px; /* 將箭頭按鈕的 padding 降至 50% */
+    font-size: 8px; /* 將箭頭按鈕的字型大小降至 50% */
   }
 }
