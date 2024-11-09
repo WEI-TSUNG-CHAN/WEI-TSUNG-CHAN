@@ -28,16 +28,22 @@
 
     .game-link {
       margin: 10px 0;
+      width: 100%;
+      text-align: center;
     }
 
     .game-link a {
-      font-size: 1.2em;
+      font-size: 1.5em;
       text-decoration: none;
       color: #007bff;
-      padding: 10px;
+      padding: 12px;
       border-radius: 5px;
       background-color: #e0e0e0;
       transition: background-color 0.3s;
+      display: inline-block;
+      width: 100%;
+      max-width: 300px; /* 限制最大寬度，避免過大 */
+      text-align: center;
     }
 
     .game-link a:hover {
@@ -49,6 +55,7 @@
       margin: 20px 0;
       width: 100%;
       max-width: 800px;
+      padding: 0 10px;
     }
 
     video {
@@ -61,25 +68,44 @@
     /* 響應式設計：針對小屏幕設備 */
     @media (max-width: 768px) {
       h1 {
-        font-size: 1.5em;
+        font-size: 1.6em;
       }
 
       .game-link a {
-        font-size: 1em;
-        padding: 8px;
+        font-size: 1.2em;
+        padding: 10px;
+      }
+
+      .video-container {
+        max-width: 100%;
       }
     }
 
     /* 響應式設計：針對非常小的屏幕設備（如手機） */
     @media (max-width: 480px) {
-      .game-link a {
-        font-size: 0.9em;
-        padding: 6px;
+      h1 {
+        font-size: 1.4em;
       }
 
-      h1 {
-        font-size: 1.2em;
+      .game-link a {
+        font-size: 1.1em;
+        padding: 8px;
       }
+
+      .video-container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* 防止影片超出邊界 */
+    .video-container {
+      overflow: hidden;
     }
   </style>
 </head>
