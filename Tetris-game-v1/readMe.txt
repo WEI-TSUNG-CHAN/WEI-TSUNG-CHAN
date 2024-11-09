@@ -4,3 +4,5 @@
 加入虛擬按鈕，位置配置遊戲畫面右側，呈十字形狀
 遊戲畫面以外元件請配置在畫面的右側
 加入響應式網頁設計，並防止觸控手勢的縮放
+
+https://youtube.com/shorts/TQooyM9kOuc?feature=share

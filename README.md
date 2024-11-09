@@ -128,12 +128,12 @@
     </div>
     <div class="video-container">
       <video controls>
-        <source src="videos/UUFC2409.MP4" type="video/mp4">
+        <source src="https://youtube.com/shorts/i7vKBM8397I?feature=share" type="video/mp4">
       </video>
     </div>
     <div class="video-container">
       <video controls>
-        <source src="videos/KHCN1273.MP4" type="video/mp4">
+        <source src="https://youtube.com/shorts/TQooyM9kOuc?feature=share" type="video/mp4">
       </video>
     </div>
   </div>

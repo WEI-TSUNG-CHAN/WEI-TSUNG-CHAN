@@ -7,3 +7,6 @@ https://WEI-TSUNG-CHAN.github.io/klotski-game/klotski/version5x5/index.html
 在還沒有遊戲記錄的時候不檢核是否完成遊戲
 加入計時器與遊戲記錄功能，點擊隨機打亂才觸發開始計時
 這網頁要能在手機、電腦、平板正常顯示
+
+https://youtube.com/shorts/i7vKBM8397I
+https://youtube.com/shorts/i7vKBM8397I?feature=share
