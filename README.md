@@ -1,78 +1,84 @@
 <html lang="zh-Hant">
-
 <head>
   <meta charset="UTF-8">
   <meta name="google-adsense-account" content="ca-pub-2700712381606881">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>小遊戲</title>
   <style>
-    /* 設定基本樣式 */
+    /* 設置頁面的基本樣式 */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
       background-color: #f4f4f4;
     }
 
     h1 {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2em;
       margin-top: 20px;
     }
 
-    /* 使用 Flexbox 來布局 */
     .container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
     }
 
-    .game-link, .video-container {
-      width: calc(50% - 20px); /* 每個元素佔據50%的寬度，並減去邊距 */
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-      text-align: center;
+    .game-link {
+      margin: 10px 0;
     }
 
     .game-link a {
+      font-size: 1.2em;
       text-decoration: none;
-      color: #333;
-      font-size: 1.5rem;
-      display: block;
-      margin-bottom: 10px;
+      color: #007bff;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #e0e0e0;
+      transition: background-color 0.3s;
     }
 
     .game-link a:hover {
-      color: #007BFF;
+      background-color: #007bff;
+      color: white;
     }
 
     .video-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
+      margin: 20px 0;
+      width: 100%;
+      max-width: 800px;
     }
 
-    /* 使視頻等比縮放 */
     video {
-      max-width: 100%; /* 寬度最多為容器的100% */
-      height: auto; /* 高度自動調整，保持比例 */
+      width: 100%;
+      height: auto;
       border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* 響應式設計：小螢幕下調整布局 */
+    /* 響應式設計：針對小屏幕設備 */
     @media (max-width: 768px) {
-      .game-link, .video-container {
-        width: 100%; /* 小螢幕上每個元素佔據100%的寬度 */
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .game-link a {
+        font-size: 1em;
+        padding: 8px;
+      }
+    }
+
+    /* 響應式設計：針對非常小的屏幕設備（如手機） */
+    @media (max-width: 480px) {
+      .game-link a {
+        font-size: 0.9em;
+        padding: 6px;
       }
 
       h1 {
-        font-size: 1.5rem; /* 減小標題字體大小 */
+        font-size: 1.2em;
       }
     }
   </style>
@@ -80,7 +86,6 @@
 
 <body>
   <h1>小遊戲</h1>
-
   <div class="container">
     <div class="game-link">
       <a href="klotski-game/version5x5/index.html">華容道</a>
@@ -91,13 +96,11 @@
     <div class="video-container">
       <video controls>
         <source src="videos/UUFC2409.MP4" type="video/mp4">
-        你的瀏覽器不支援視頻標籤。
       </video>
     </div>
     <div class="video-container">
       <video controls>
         <source src="videos/KHCN1273.MP4" type="video/mp4">
-        你的瀏覽器不支援視頻標籤。
       </video>
     </div>
   </div>
