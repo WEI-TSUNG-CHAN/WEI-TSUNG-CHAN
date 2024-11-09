@@ -1,0 +1,123 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 填滿視窗高度 */
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;  /* 最大寬度 */
+  height: 90%; /* 高度占據視窗的90% */
+  padding: 10px;
+  box-sizing: border-box;  /* 包括 padding 在內 */
+  transform: scale(0.8); /* 縮放整個遊戲區塊 */
+  transform-origin: top center; /* 設定縮放的參考點為上方中央 */
+}
+
+canvas {
+  border: 1px solid #fff;
+  width: 100%;  /* 畫布寬度為容器的100% */
+  height: auto;
+}
+
+#score, #timer {
+  margin-top: 10px;
+  font-size: 20px;
+  display: block;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+  width: 120px;
+}
+
+button:disabled {
+  background-color: #555;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap; /* 按鈕換行顯示 */
+}
+
+#controls button {
+  margin: 5px;
+}
+
+/* 響應式設計：調整畫布大小和按鈕大小 */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #game-container {
+    width: 90%;  /* 在平板上，遊戲容器寬度為90% */
+    padding: 10px;
+  }
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  #score, #timer {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+    width: 100px; /* 按鈕稍微縮小 */
+  }
+
+  #controls {
+    flex-direction: column;  /* 在平板上，按鈕垂直排列 */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  #score, #timer {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  button {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #controls {
+    flex-direction: column;  /* 按鈕換行垂直排列 */
+  }
+}
