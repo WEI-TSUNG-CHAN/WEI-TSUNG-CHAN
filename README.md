@@ -36,11 +36,12 @@
       box-sizing: border-box;
     }
 
-    /* 讓影片自適應並等比縮放 */
+    /* 讓影片自適應並等比縮放，保持16:9的比例 */
     .container video {
       width: 100%;
-      height: auto;
       max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9; /* 保持16:9比例 */
     }
 
     /* 當螢幕小於600px時，將內容調整為垂直排列 */
