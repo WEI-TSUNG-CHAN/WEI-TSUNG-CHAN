@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
@@ -84,10 +83,10 @@
 
   <div class="container">
     <div class="game-link">
-      <h2><a href="klotski-game/version5x5/index.html">華容道</a></h2>
+      <a href="klotski-game/version5x5/index.html">華容道</a>
     </div>
     <div class="game-link">
-      <h2><a href="Tetris-game-v1/index.html">俄羅斯方塊</a></h2>
+      <a href="Tetris-game-v1/index.html">俄羅斯方塊</a>
     </div>
     <div class="video-container">
       <video controls>
