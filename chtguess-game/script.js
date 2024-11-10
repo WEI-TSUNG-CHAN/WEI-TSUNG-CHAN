@@ -1,5 +1,5 @@
 const wordList = [
-    { character: '學', pinyin: 'ㄒㄩㄝˊ' },
+    { character: '學', pinyin: 'ㄒㄩˊ' },
     { character: '習', pinyin: 'ㄒㄧˊ' },
     { character: '書', pinyin: 'ㄕㄨ' },
     { character: '快', pinyin: 'ㄎㄨㄞˋ' },
@@ -58,18 +58,6 @@ const wordList = [
     { character: '食', pinyin: 'ㄕˊ' },
     { character: '飲', pinyin: 'ㄧㄣˇ' },
     { character: '水', pinyin: 'ㄕㄨㄟˇ' },
-    { character: '米', pinyin: 'ㄇㄧˇ' },
-    { character: '糖', pinyin: 'ㄊㄤˊ' },
-    { character: '面', pinyin: 'ㄇㄧㄢˋ' },
-    { character: '麵', pinyin: 'ㄇㄧㄢˋ' },
-    { character: '蛋', pinyin: 'ㄉㄢˋ' },
-    { character: '蔬', pinyin: 'ㄕㄨ' },
-    { character: '菜', pinyin: 'ㄘㄞˋ' },
-    { character: '飯', pinyin: 'ㄈㄢˋ' },
-    { character: '肉', pinyin: 'ㄖㄡˋ' },
-    { character: '魚', pinyin: 'ㄩˊ' },
-    { character: '雞', pinyin: 'ㄐㄧ' },
-    { character: '水', pinyin: 'ㄕㄨㄟˇ' },
     { character: '書', pinyin: 'ㄕㄨ' },
     { character: '音', pinyin: 'ㄧㄣ' },
     { character: '樂', pinyin: 'ㄌㄜˋ' },
@@ -111,16 +99,12 @@ let currentWord = getRandomWord();
 // 初始化畫布
 const canvas = document.getElementById('writingCanvas');
 const ctx = canvas.getContext('2d');
-let canvasWidth = canvas.offsetWidth;
-let canvasHeight = canvas.offsetHeight;
 
-// 更新畫布大小
-function updateCanvasSize() {
-    canvasWidth = canvas.offsetWidth;
-    canvasHeight = canvas.offsetHeight;
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
-}
+// 設定畫布大小固定
+const canvasWidth = 500;
+const canvasHeight = 300;
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
 
 // 顯示字和注音提示
 function updateWordDisplay() {
@@ -138,6 +122,42 @@ let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
 
+// 處理觸控事件
+function getTouchPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.touches[0].clientX - rect.left;
+    const y = e.touches[0].clientY - rect.top;
+    return { x, y };
+}
+
+// 手指觸控開始
+canvas.addEventListener('touchstart', (e) => {
+    isDrawing = true;
+    const { x, y } = getTouchPos(e);
+    lastX = x;
+    lastY = y;
+    e.preventDefault();
+});
+
+// 手指觸控移動
+canvas.addEventListener('touchmove', (e) => {
+    if (!isDrawing) return;
+    const { x, y } = getTouchPos(e);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    lastX = x;
+    lastY = y;
+    e.preventDefault();
+});
+
+// 手指觸控結束
+canvas.addEventListener('touchend', () => {
+    isDrawing = false;
+});
+
+// 鼠標事件處理（桌面設備）
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     lastX = e.offsetX;
@@ -148,12 +168,10 @@ canvas.addEventListener('mousemove', (e) => {
     if (!isDrawing) return;
     const currentX = e.offsetX;
     const currentY = e.offsetY;
-
     ctx.beginPath();
     ctx.moveTo(lastX, lastY);
     ctx.lineTo(currentX, currentY);
     ctx.stroke();
-
     lastX = currentX;
     lastY = currentY;
 });
@@ -174,10 +192,7 @@ document.getElementById('nextWordBtn').addEventListener('click', () => {
 });
 
 // 初始化遊戲
-updateCanvasSize();
 updateWordDisplay();
 
-// 調整畫布大小
-window.addEventListener('resize', () => {
-    updateCanvasSize();
-});
+// 清除畫布
+document.getElementById('clearCanvasBtn').addEventListener('click', clearCanvas);
