@@ -1,0 +1,97 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f7fc; /* 輕柔的冷色背景 */
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 80px);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.grid-cell {
+  width: 80px;
+  height: 80px;
+  background-color: #b0b8c1; /* 默認冷色 */
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+/* 冷色系顏色定義 */
+#game-info {
+  text-align: center;
+}
+
+#score,
+#high-score,
+#timer {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #2c3e50; /* 冷色調的文字顏色 */
+}
+
+#reset-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2980b9; /* 藍色背景 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#reset-button:hover {
+  background-color: #3498db; /* 更亮的藍色 */
+}
+
+@media (max-width: 500px) {
+  #grid-container {
+      grid-template-columns: repeat(4, 60px);
+      grid-template-rows: repeat(4, 60px);
+      gap: 8px;
+  }
+
+  .grid-cell {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+  }
+}
+
+/* 定義每個數字塊的冷色背景 */
+.grid-cell-2 { background-color: #c8d6e5; }
+.grid-cell-4 { background-color: #a2c2e1; }
+.grid-cell-8 { background-color: #5d6d7e; }
+.grid-cell-16 { background-color: #2c3e50; }
+.grid-cell-32 { background-color: #34495e; }
+.grid-cell-64 { background-color: #1a2b3c; }
+.grid-cell-128 { background-color: #5b6c7d; }
+.grid-cell-256 { background-color: #2f4050; }
+.grid-cell-512 { background-color: #34495e; }
+.grid-cell-1024 { background-color: #3b4a59; }
+.grid-cell-2048 { background-color: #1e2a33; }
