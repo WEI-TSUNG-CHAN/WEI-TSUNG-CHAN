@@ -5,12 +5,19 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;  /* 禁用頁面滾動 */
+  touch-action: none;  /* 禁止觸摸操作，如縮放 */
+  -webkit-user-drag: none; /* 禁止拖動操作 */
+  user-select: none; /* 禁止選擇文本 */
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #f4f7fc; /* 輕柔的冷色背景 */
 }
 
@@ -18,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;  /* 確保遊戲區域不滾動 */
 }
 
 #grid-container {
