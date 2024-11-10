@@ -126,6 +126,9 @@
     <div class="game-link">
       <a href="Tetris-game-v1/index.html">俄羅斯方塊</a>
     </div>
+    <div class="game-link">
+      <a href="chtguess-game/index.html">中文字寫練習</a>
+    </div>
     <div class="video-container">
       <video controls>
         <source src="https://youtube.com/shorts/i7vKBM8397I?feature=share" type="video/mp4">
