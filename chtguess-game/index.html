@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中文寫字練習遊戲</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中文寫字練習遊戲</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>中文寫字練習遊戲</h1>
-        <div class="word-display">
-            <div id="character">字</div>
-            <div id="pinyin">注音提示</div>
-        </div>
-        <div class="canvas-container">
-            <canvas id="writingCanvas"></canvas>
-        </div>
-        <button id="nextWordBtn">下一個字</button>
+  <div id="game">
+    <h1>中文寫字練習遊戲</h1>
+    <div id="character">
+      <span id="current-character"></span>
+      <span id="current-zhuyin"></span>
     </div>
-
-    <script src="script.js"></script>
+    <canvas id="writing-canvas"></canvas>
+    <div id="buttons">
+      <button id="next-char">下一個字</button>
+      <button id="clear-canvas">清除</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
