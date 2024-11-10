@@ -70,6 +70,9 @@
     <div class="game-link">
       <a href="chtguess-game/index.html">中文字寫練習(手機)</a>
     </div>
+    <div class="game-link">
+      <a href="2048-game/index.html">2048(手機)</a>
+    </div>
     <!-- 嵌入YouTube视频 -->
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/i7vKBM8397I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

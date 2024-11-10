@@ -1,0 +1,113 @@
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e2f7f1; /* 淡青色背景 */
+}
+
+#game-container {
+  text-align: center;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.grid-cell {
+  width: 100px;
+  height: 100px;
+  background-color: #A0D5D9; /* 淡綠藍色背景 */
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #2C4D54; /* 深青色字體 */
+}
+
+#score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2C4D54; /* 深青色分數 */
+  margin-top: 20px;
+}
+
+/* 格子顏色根據數字不同而改變 */
+.grid-cell {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.grid-cell[data-value="2"] {
+  background-color: #A0D5D9; /* 淡綠藍色 */
+  color: #2C4D54; /* 深青色文字 */
+}
+
+.grid-cell[data-value="4"] {
+  background-color: #8AC1C9; /* 淺青色 */
+  color: #2C4D54; /* 深青色文字 */
+}
+
+.grid-cell[data-value="8"] {
+  background-color: #6BAFBB; /* 藍綠色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="16"] {
+  background-color: #4F9AA9; /* 青色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="32"] {
+  background-color: #418F96; /* 深青色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="64"] {
+  background-color: #327B7D; /* 深藍綠色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="128"] {
+  background-color: #2B6C6A; /* 藍綠灰色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="256"] {
+  background-color: #225A56; /* 更深的藍綠色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="512"] {
+  background-color: #1A4846; /* 深青灰色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="1024"] {
+  background-color: #123B3A; /* 極深的青色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="2048"] {
+  background-color: #0C2F2D; /* 最深的青色 */
+  color: #FFFFFF; /* 白色文字 */
+}
+
+.grid-cell[data-value="0"] {
+  background-color: #e2f7f1; /* 背景保持淡青色 */
+  color: transparent;
+}
+
